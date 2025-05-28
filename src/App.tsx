@@ -24,14 +24,33 @@ function App() {
   };
 
   return (
-    <div className="App w-full h-full">
-      <header className="App-header mx-30 rounded-b-3xl bg-gray-900 text-white wdxl-lubrifont-tc-regular text-7xl text-center py-30">
-        Kanban
-      </header>
-      <InputField todo = {todo} setTodo = {setTodo} handleAdd={handleAdd} />
-      <TodoList todos = {todos} setTodos={setTodos}/>
-      <Footer/>
-    </div>
+   <div className="App relative w-full min-h-screen overflow-hidden bg-gray-950">
+  <div
+    style={{
+      position: "absolute",
+      top: "-70%",
+      left: "1%",
+      width: "1300px",
+      height: "13 00px",
+      borderRadius: "50%",
+      background:
+        "radial-gradient(circle, rgba(250, 204, 21, 0.12) 0%, transparent 70%)",
+      filter: "blur(100px)",
+      pointerEvents: "none",
+      zIndex: 0,
+    }}
+  />
+
+  
+  <header className="App-header rounded-b-3xl text-gray-200 wdxl-lubrifont-tc-regular text-7xl text-center py-30 relative z-10">
+    Kanban
+  </header>
+
+  <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+  <TodoList todos={todos} setTodos={setTodos} />
+  <Footer />
+</div>
+
   );
 }
 
