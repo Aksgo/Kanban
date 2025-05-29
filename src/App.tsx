@@ -20,32 +20,34 @@ function App() {
       setTodo("");
       inputRef.current?.blur();
     } 
-    console.log(todos);
   };
 
   return (
    <div className="App relative w-full min-h-screen overflow-hidden bg-gray-950">
-  <div
-    style={{
-      position: "absolute",
-      top: "-70%",
-      left: "1%",
-      width: "1300px",
-      height: "13 00px",
-      borderRadius: "50%",
-      background:
-        "radial-gradient(circle, rgba(250, 204, 21, 0.12) 0%, transparent 70%)",
-      filter: "blur(100px)",
-      pointerEvents: "none",
-      zIndex: 0,
-    }}
-  />
+ <div
+  style={{
+    position: "absolute",
+    top: "-40%",
+    left: "-10%",
+    width: "1300px",
+    height: "1300px",
+    borderRadius: "50%",
+    background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 1%, rgba(168, 85, 247, 0.1) 1%, transparent 80%)",
+    filter: "blur(150px)",
+    pointerEvents: "none",
+    zIndex:1
+  }}
+/>
 
-  
-  <header className="App-header rounded-b-3xl text-gray-200 wdxl-lubrifont-tc-regular text-7xl text-center py-30 relative z-10">
+  <div className='flex flex-col m-auto '>
+  <header className="App-header rounded-b-3xl text-gray-100 wdxl-lubrifont-tc-regular text-[90px] text-center pt-20 pb-3 relative">
     Kanban
   </header>
-
+    <span className="app-des rounded-b-3xl text-gray-200 raleway-f1 text-[30px] text-center ">
+    Manage. Assign. Grow.
+  </span>
+  </div>
+    
   <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
   <TodoList todos={todos} setTodos={setTodos} />
   <Footer />

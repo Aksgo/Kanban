@@ -8,17 +8,37 @@ interface Props {
 };
 const TodoList : React.FC<Props> = ({todos, setTodos})=>{
     return (
-        <div className=" todos flex flex-row gap-1 mx-10 mb-5">
-            {
-                todos.map(todo => (
-                    <SingleTodo
-                    todo = {todo}
-                    todos = {todos}
-                    setTodos = {setTodos}
-                    />
-                ))
-            }
-            {/* <div className="todos relative text-gray-300 bg-gray-800 flex flex-col w-1/2 m-10 items-center py-3 px-2 rounded-md max-w-1/3">
+        <div className="todos-board flex m-10 justify-center">
+            <div className=" todos  flex-1 relative text-gray-300 bg-gray-900 flex flex-col m-10 items-center rounded-md max-w-1/3">
+                <header className="top-0 absolute font-medium text-xl bg-pink-800 p-2 rounded-sm w-full text-center">Assigned</header> 
+                <div className="mt-11 flex flex-col w-full">
+                {
+                    todos.map(todo => (
+                        <SingleTodo
+                        todo = {todo}
+                        todos = {todos}
+                        setTodos = {setTodos}
+                        />
+                    ))
+                }
+                </div>  
+            </div>
+
+            <div className=" todos relative flex-1 text-gray-300 bg-gray-900 flex flex-col m-10 items-center rounded-md max-w-1/3">
+                <header className="top-0 absolute font-medium text-xl bg-green-700 p-2 rounded-sm w-full text-center">Completed</header> 
+                <div className="mt-11 flex flex-col w-full">
+                {
+                    
+                }
+                </div>  
+            </div>
+        </div>
+    );
+};
+
+export default TodoList;
+
+/* <div className="todos relative text-gray-300 bg-gray-800 flex flex-col w-1/2 m-10 items-center py-3 px-2 rounded-md max-w-1/3">
                 <header className="top-0 absolute font-medium text-xl bg-pink-800 p-2 rounded-sm w-full text-center">Ongoing</header>   
                 <div className="mt-13 mb-5 flex flex-col gap-5 ">
                     {todos.map(todo=>(
@@ -37,9 +57,4 @@ const TodoList : React.FC<Props> = ({todos, setTodos})=>{
                 <div className="mt-13 mb-5 flex flex-col gap-5 ">
                    
                 </div>
-            </div> */}
-        </div>
-    );
-};
-
-export default TodoList;
+            </div> */
