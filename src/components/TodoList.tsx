@@ -2,6 +2,7 @@ import React from "react";
 import "../output.css";
 import { Todo } from "../model";
 import SingleTodo from "./SingleTodo";
+import CompleteTodo from "./CompleteTodo";
 interface Props {
     todos:Todo[];
     setTodos:React.Dispatch<React.SetStateAction<Todo[]>>;
@@ -28,7 +29,13 @@ const TodoList : React.FC<Props> = ({todos, setTodos})=>{
                 <header className="top-0 absolute font-medium text-xl bg-green-700 p-2 rounded-sm w-full text-center">Completed</header> 
                 <div className="mt-11 flex flex-col w-full">
                 {
-                    
+                    todos.map(todo => (
+                        <CompleteTodo
+                        todo = {todo}
+                        todos = {todos}
+                        setTodos = {setTodos}
+                        />
+                    ))
                 }
                 </div>  
             </div>

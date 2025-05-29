@@ -33,6 +33,7 @@ const SingleTodo = ({todo,todos,setTodos}:Props)=>{
     };
     const handleEdit = (e:React.FormEvent, id:number)=>{
         e.preventDefault();
+
         setTodos(
             todos.map((todo)=>{
                 return todo.id===id?({...todo, todo:editTodo}):todo;
@@ -47,7 +48,8 @@ const SingleTodo = ({todo,todos,setTodos}:Props)=>{
     },[edit]);
 
     return (
-        <form 
+        <div>{
+        todo.isDone?null:(<form 
         onSubmit={(e)=>{handleEdit(e,todo.id)}}
         className="todo_single raleway-f1 flex text-lg font-medium items-center justify-between text-gray-200 hover:bg-gray-800 px-4 py-4">
             {
@@ -65,7 +67,7 @@ const SingleTodo = ({todo,todos,setTodos}:Props)=>{
                     }   
                 })())
             }         
-            <div className=" flex gap-2">
+            <div className=" icons flex gap-2">
                     <span className="icon p-1 border rounded-2xl text-blue-300 transition-transform active:scale-80" onClick={
                         (e)=>{
                             if(!edit && !todo.isDone){setEdit(!edit);}
@@ -82,7 +84,8 @@ const SingleTodo = ({todo,todos,setTodos}:Props)=>{
                     <IoMdDoneAll />
                 </span>
             </div>
-        </form>
+        </form>)
+    }</div>
     );
 }
 export default SingleTodo;

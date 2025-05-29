@@ -26,7 +26,7 @@ function App() {
    <div className="App relative w-full min-h-screen overflow-hidden bg-gray-950">
  <div
   style={{
-    position: "absolute",
+    position: "fixed",
     top: "-40%",
     left: "-10%",
     width: "1300px",
