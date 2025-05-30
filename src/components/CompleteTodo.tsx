@@ -29,7 +29,7 @@ const CompleteTodo = ({todo, todos, setTodos}:Props)=>{
         <div>
         {todo.isDone?
         (
-        <div className="complete-todo raleway-f1 flex text-lg font-medium items-center justify-between text-gray-200 hover:bg-gray-800 px-4 py-4">
+        <div className="todo_single raleway-f1 flex text-lg font-medium items-center justify-between bg-[#18181f] text-gray-200 hover:bg-[#1F1F21] px-4 py-4 rounded-xl mx-2 mt-2">
             <span className="todo-head w-2/3 break-words">{todo.todo}</span>
             <div className=" icons flex gap-2">
                 <span className="icon p-1 border rounded-2xl text-blue-300 transition-transform active:scale-80" onClick={()=>{handleRollback(todo.id)}}>

@@ -27,10 +27,10 @@ function App() {
  <div
   style={{
     position: "fixed",
-    top: "-40%",
+    top: "-85%",
     left: "-10%",
-    width: "1300px",
-    height: "1300px",
+    width: "1000px",
+    height: "1000px",
     borderRadius: "50%",
     background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 1%, rgba(168, 85, 247, 0.1) 1%, transparent 80%)",
     filter: "blur(150px)",

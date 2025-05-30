@@ -51,8 +51,8 @@ const SingleTodo = ({todo,todos,setTodos}:Props)=>{
         <div>{
         todo.isDone?null:(<form 
         onSubmit={(e)=>{handleEdit(e,todo.id)}}
-        className="todo_single raleway-f1 flex text-lg font-medium items-center justify-between text-gray-200 hover:bg-gray-800 px-4 py-4">
-            {
+        className="todo_single raleway-f1 flex text-lg font-medium items-center justify-between bg-[#18181f] text-gray-200 hover:bg-[#1F1F21] px-4 py-4 rounded-xl mx-2 mt-2">
+            {   
                 edit?(<input 
                     ref={inputRef}
                     className="bg-gray-600 p-2"
